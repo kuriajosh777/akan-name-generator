@@ -1,0 +1,45 @@
+/* ---------------------------------------------
+   Tokens
+--------------------------------------------- */
+:root {
+  --bg: #17151a;
+  --panel: #211e26;
+  --panel-border: #34303c;
+  --cream: #f3ecdd;
+  --muted: #a79fb0;
+  --gold: #c9a227;
+  --red: #a13d2e;
+  --green: #3c6e47;
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* one accent per day, cycled onto the result panel */
+  --day-0: #c9a227; /* Sunday */
+  --day-1: #cfc6b8; /* Monday */
+  --day-2: #a13d2e; /* Tuesday */
+  --day-3: #3c6e47; /* Wednesday */
+  --day-4: #7a5ea8; /* Thursday */
+  --day-5: #3d7c8c; /* Friday */
+  --day-6: #b5762c; /* Saturday */
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--cream);
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
