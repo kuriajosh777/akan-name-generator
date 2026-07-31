@@ -62,3 +62,13 @@ function calculateDayOfWeek(day, month, year) {
   // Normalize so 0 = Sunday ... 6 = Saturday, matching AKAN_NAMES.
   return (h + 6) % 7;
 }
+
+// ---------------------------------------------
+// Name lookup
+// ---------------------------------------------
+function getAkanName(day, month, year, gender) {
+  const dayIndex = calculateDayOfWeek(day, month, year);
+  const entry = AKAN_NAMES[dayIndex];
+  const name = gender === "male" ? entry.male : entry.female;
+  return { dayIndex, dayName: entry.day, name };
+}
