@@ -81,3 +81,33 @@ const resultBox = document.getElementById("result");
 const resultDayEl = document.getElementById("result-day");
 const resultNameEl = document.getElementById("result-name");
 const resultNoteEl = document.getElementById("result-note");
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const day = parseInt(document.getElementById("day").value, 10);
+  const month = parseInt(document.getElementById("month").value, 10);
+  const year = parseInt(document.getElementById("year").value, 10);
+  const genderInput = form.querySelector('input[name="gender"]:checked');
+  const gender = genderInput ? genderInput.value : null;
+
+  if (!isValidInput(day, month, year, gender)) {
+    alert(
+      "Please enter a valid date (day 1-31, month 1-12, an existing calendar date) and select a gender."
+    );
+    resultBox.hidden = true;
+    return;
+  }
+
+  const { dayIndex, dayName, name } = getAkanName(day, month, year, gender);
+
+  resultDayEl.textContent = `Born on a ${dayName}`;
+  resultNameEl.textContent = name;
+  resultNoteEl.textContent = `${String(month).padStart(2, "0")}/${String(
+    day
+  ).padStart(2, "0")}/${year} falls on a ${dayName}.`;
+
+  resultBox.style.setProperty("--result-accent", `var(--day-${dayIndex})`);
+  resultBox.hidden = false;
+  resultBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
+});
