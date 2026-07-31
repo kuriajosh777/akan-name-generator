@@ -43,3 +43,48 @@ body {
   font-family: var(--font-body);
   line-height: 1.5;
 }
+/* ---------------------------------------------
+   Signature: kente strip
+--------------------------------------------- */
+.kente-strip {
+  height: 10px;
+  width: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--gold) 0 28px,
+    var(--red) 28px 42px,
+    var(--green) 42px 56px,
+    var(--cream) 56px 64px
+  );
+}
+
+/* ---------------------------------------------
+   Layout
+--------------------------------------------- */
+.page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 64px 24px 48px;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 14px;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  margin: 0 0 16px;
+  letter-spacing: -0.01em;
+}
