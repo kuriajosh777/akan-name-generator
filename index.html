@@ -2,10 +2,76 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akan name generator</title>
 </head>
 <body>
     
+ <div class="kente-strip" aria-hidden="true"></div>
+
+  <main class="page">
+    <header class="intro">
+      <p class="eyebrow">Akan Day-Name Finder</p>
+      <h1>Every day carries a name.</h1>
+      <p class="lede">
+        Among the Akan people of Ghana, a child's first name is not chosen —
+        it is given by the day they were born. Enter a birthdate below to
+        find the name the week itself would have given you.
+      </p>
+    </header>
+
+    <section class="panel">
+      <form id="akan-form" class="form" novalidate>
+        <div class="field-row">
+          <div class="field">
+            <label for="day">Day</label>
+            <input type="number" id="day" name="day" min="1" max="31" placeholder="DD" inputmode="numeric" required />
+          </div>
+          <div class="field">
+            <label for="month">Month</label>
+            <input type="number" id="month" name="month" min="1" max="12" placeholder="MM" inputmode="numeric" required />
+          </div>
+          <div class="field">
+            <label for="year">Year</label>
+            <input type="number" id="year" name="year" min="1" max="9999" placeholder="YYYY" inputmode="numeric" required />
+          </div>
+        </div>
+
+        <fieldset class="field gender-field">
+          <legend>Gender</legend>
+          <div class="gender-options">
+            <label class="radio-pill">
+              <input type="radio" name="gender" value="male" required />
+              <span>Male</span>
+            </label>
+            <label class="radio-pill">
+              <input type="radio" name="gender" value="female" />
+              <span>Female</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="submit-btn">Find my name</button>
+      </form>
+
+      <div id="result" class="result" hidden>
+        <svg class="sankofa" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M50 12 C 28 12, 14 28, 14 50 C 14 72, 30 86, 50 86" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+          <path d="M50 86 C 62 86, 70 78, 70 68 C 70 58, 62 52, 52 52" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="50" cy="52" r="5" fill="currentColor"/>
+          <path d="M14 50 L4 42 M14 50 L4 58" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <p class="result-eyebrow" id="result-day"></p>
+        <p class="result-name" id="result-name"></p>
+        <p class="result-note" id="result-note"></p>
+      </div>
+      </section>
+
+      <footer class="page-footer">
+      <p>Names shown reflect the traditional Akan day-name system. Built as a learning project.</p>
+    </footer>
+  </main>
+
 </body>
 </html>
