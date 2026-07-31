@@ -274,3 +274,15 @@ input[type="number"]::-webkit-inner-spin-button {
   font-size: 0.75rem;
   color: var(--muted);
 }
+
+/* ---------------------------------------------
+  Responsive
+--------------------------------------------- */
+@media (max-width: 480px) {
+  .field-row {
+    grid-template-columns: 1fr 1fr 1.3fr;
+  }
+  .panel {
+    padding: 24px 18px;
+  }
+}
