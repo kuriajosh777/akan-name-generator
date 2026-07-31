@@ -264,3 +264,13 @@ input[type="number"]::-webkit-inner-spin-button {
   color: var(--muted);
   margin: 0;
 }
+
+/* ---------------------------------------------
+  Footer
+--------------------------------------------- */
+.page-footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
