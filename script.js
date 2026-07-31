@@ -72,3 +72,12 @@ function getAkanName(day, month, year, gender) {
   const name = gender === "male" ? entry.male : entry.female;
   return { dayIndex, dayName: entry.day, name };
 }
+
+// ---------------------------------------------
+// UI wiring
+// ---------------------------------------------
+const form = document.getElementById("akan-form");
+const resultBox = document.getElementById("result");
+const resultDayEl = document.getElementById("result-day");
+const resultNameEl = document.getElementById("result-name");
+const resultNoteEl = document.getElementById("result-note");
