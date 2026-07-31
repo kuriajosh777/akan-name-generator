@@ -28,3 +28,37 @@ function isValidInput(day, month, year, gender) {
 
   return true;
 }
+
+// ---------------------------------------------
+// Zeller's congruence
+// Returns 0 = Sunday, 1 = Monday, ... 6 = Saturday
+// ---------------------------------------------
+function calculateDayOfWeek(day, month, year) {
+  let m = month;
+  let y = year;
+
+  // January and February are treated as months 13 and 14
+  // of the previous year in Zeller's congruence.
+  if (m < 3) {
+    m += 12;
+    y -= 1;
+  }
+
+  const CC = Math.floor(y / 100); // century
+  const YY = y % 100; // year within century
+  const MM = m;
+  const DD = day;
+
+  // h: 0 = Saturday, 1 = Sunday, 2 = Monday, ... 6 = Friday
+  const h =
+    (DD +
+      Math.floor((13 * (MM + 1)) / 5) +
+      YY +
+      Math.floor(YY / 4) +
+      Math.floor(CC / 4) +
+      5 * CC) %
+    7;
+
+  // Normalize so 0 = Sunday ... 6 = Saturday, matching AKAN_NAMES.
+  return (h + 6) % 7;
+}
